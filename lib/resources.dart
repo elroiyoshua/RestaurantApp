@@ -46,8 +46,10 @@ class Restaurant {
     final foodsData = json['menus']['foods'] as List<dynamic>;
     final drinksData = json['menus']['drinks'] as List<dynamic>;
 
-    final foods = MenuCategory.fromJsonList(foodsData.cast<Map<String, dynamic>>());
-    final drinks = MenuCategory.fromJsonList(drinksData.cast<Map<String, dynamic>>());
+    final foods =
+        MenuCategory.fromJsonList(foodsData.cast<Map<String, dynamic>>());
+    final drinks =
+        MenuCategory.fromJsonList(drinksData.cast<Map<String, dynamic>>());
 
     return Restaurant(
       id: json['id'],
