@@ -6,7 +6,7 @@ Widget CardResto(BuildContext context, RestaurantElement restaurant) {
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, detailResto.routeName,
-          arguments: restaurant.id);
+          arguments: restaurant);
     },
     child: Card(
       margin: const EdgeInsets.all(8.0),

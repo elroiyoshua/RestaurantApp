@@ -2,7 +2,6 @@
 //
 //     final detailRestaurant = detailRestaurantFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 DetailRestaurant detailRestaurantFromJson(String str) =>
