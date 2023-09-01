@@ -9,11 +9,9 @@ class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
   RestaurantBloc() : super(RestaurantInitial()) {
     on<GetRestaurantEvent>((event, emit) async {
       emit(RestaurantLoading());
-
       final Response =
-          await http.get(Uri.parse('https://restaurant-api.dicoding.dev/list'));
-
-      emit(RestaurantSuccess(restaurants: restaurantFromJson(Response.body)));
+          await http.get(Uri.parse('http://restaurant-api.dicoding.dev/list'));
+      emit(RestaurantSuccess(restaurante: restaurantFromJson(Response.body)));
     });
   }
 }

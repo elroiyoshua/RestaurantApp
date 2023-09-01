@@ -9,9 +9,9 @@ class RestaurantInitial extends RestaurantState {}
 class RestaurantLoading extends RestaurantState {}
 
 class RestaurantSuccess extends RestaurantState {
-  final Restaurant restaurants;
+  final Restaurant restaurante;
   RestaurantSuccess({
-    required this.restaurants,
+    required this.restaurante,
   });
   
 }

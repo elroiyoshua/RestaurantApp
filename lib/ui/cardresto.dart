@@ -6,7 +6,7 @@ Widget CardResto(BuildContext context, RestaurantElement restaurant) {
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, detailResto.routeName,
-          arguments: restaurant);
+          arguments: restaurant.id);
     },
     child: Card(
       margin: const EdgeInsets.all(8.0),
@@ -18,7 +18,7 @@ Widget CardResto(BuildContext context, RestaurantElement restaurant) {
             child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                 child: Image.network(
-                  restaurant.pictureId,
+                  'https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}',
                   height: 150,
                   width: 150,
                 )),
