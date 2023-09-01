@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: Text("Resto App"),
+            title: const Text("Resto App"),
             elevation: 0,
           ),
           body: FutureBuilder(
@@ -63,78 +63,76 @@ Widget CardResto(BuildContext context, Restaurant restaurant) {
           arguments: restaurant);
     },
     child: Card(
-      margin: EdgeInsets.all(8.0),
-      child: Container(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  child: Image.network(
-                    restaurant.pictureId,
-                    height: 150,
-                    width: 150,
-                  )),
+      margin: const EdgeInsets.all(8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                child: Image.network(
+                  restaurant.pictureId,
+                  height: 150,
+                  width: 150,
+                )),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.restaurant,
+                      size: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        restaurant.name,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    const Icon(Icons.location_city),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(restaurant.city),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(restaurant.rating.toString()),
+                    )
+                  ],
+                ),
+              ],
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.restaurant,
-                        size: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          restaurant.name,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.location_city),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Text(restaurant.city),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Text(restaurant.rating.toString()),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     ),
   );

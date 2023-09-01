@@ -34,24 +34,24 @@ class detailResto extends StatelessWidget {
                 children: [
                   Text(
                     restaurant.name,
-                    style: TextStyle(fontSize: 40),
+                    style: const TextStyle(fontSize: 40),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
                     "Located at ${restaurant.city} with rate ${restaurant.rating}",
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
                     restaurant.description,
-                    style: TextStyle(fontSize: 12, color: Colors.black54),
+                    style: const TextStyle(fontSize: 12, color: Colors.black54),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Foods:",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
@@ -73,8 +73,8 @@ class detailResto extends StatelessWidget {
                       );
                     }).toList(),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Drinks:",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
