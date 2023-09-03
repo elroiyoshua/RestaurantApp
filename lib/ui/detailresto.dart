@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_restaurant/api/apidetail.dart';
 import 'package:flutter_restaurant/model/restaurantdetail.dart';
 import 'package:flutter_restaurant/model/restaurants.dart';
+import 'package:flutter_restaurant/model/restaurantsearch.dart';
 
 class detailResto extends StatefulWidget {
   static const routeName = '/detailresto';
-  final RestaurantElement restaurant;
+  final Restaurantsearch restaurant;
 
   const detailResto({Key? key, required this.restaurant}) : super(key: key);
 

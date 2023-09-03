@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restaurant/model/restaurants.dart';
+import 'package:flutter_restaurant/model/restaurantsearch.dart';
 import 'package:flutter_restaurant/ui/detailresto.dart';
 
-Widget CardResto(BuildContext context, RestaurantElement restaurant) {
+Widget CardResto(BuildContext context, Restaurantsearch restaurant) {
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, detailResto.routeName,
