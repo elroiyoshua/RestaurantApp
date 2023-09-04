@@ -25,10 +25,10 @@ class _SearchPageState extends State<SearchPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Search Page"),
+          title: const Text("Search Page"),
           actions: [
             IconButton(
-              icon: Icon(Icons.search_outlined),
+              icon: const Icon(Icons.search_outlined),
               onPressed: () async {
                 final result = await showSearch<String>(
                   context: context,
@@ -58,7 +58,7 @@ class _SearchPageState extends State<SearchPage> {
                 if (snapshot.hasData) {
                   if (snapshot.data?.founded == 0 ||
                       snapshot.data?.restaurants == 0) {
-                    return Center(
+                    return const Center(
                       child: Text("Data yang dicari tidak ada"),
                     );
                   } else {
@@ -104,14 +104,14 @@ class CustomSearch extends SearchDelegate<String> {
           onPressed: () {
             query = '';
           },
-          icon: Icon(Icons.clear))
+          icon: const Icon(Icons.clear))
     ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
     IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         close(context, "");
       },
@@ -120,9 +120,14 @@ class CustomSearch extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    Navigator.pop(context, query);
-    print(query);
-    return Container();
+    if (query == "") {
+      return const Center(
+        child: Text("Data tidak boleh kosong"),
+      );
+    } else {
+      Navigator.pop(context, query);
+      return Container();
+    }
   }
 
   @override

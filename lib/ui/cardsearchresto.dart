@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restaurant/model/restaurantsearch.dart';
-import 'package:flutter_restaurant/ui/detailresto.dart';
+
 import 'package:flutter_restaurant/ui/detailsearchresto.dart';
 
 Widget CardSearchResto(BuildContext context, Restaurantsearch restaurant) {

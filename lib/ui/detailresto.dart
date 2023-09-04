@@ -88,7 +88,7 @@ class _detailRestoState extends State<detailResto> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 // Tampilkan judul makanan
-                                Text(
+                                const Text(
                                   'Foods:',
                                   style: TextStyle(
                                       fontSize: 18,
@@ -107,7 +107,7 @@ class _detailRestoState extends State<detailResto> {
                                   ),
 
                                 // Tampilkan judul minuman
-                                Text(
+                                const Text(
                                   'Drinks:',
                                   style: TextStyle(
                                       fontSize: 18,

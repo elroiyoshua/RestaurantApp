@@ -90,7 +90,7 @@ class _detailSearchRestoState extends State<detailSearchResto> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 // Tampilkan judul makanan
-                                Text(
+                                const Text(
                                   'Foods:',
                                   style: TextStyle(
                                       fontSize: 18,
@@ -109,7 +109,7 @@ class _detailSearchRestoState extends State<detailSearchResto> {
                                   ),
 
                                 // Tampilkan judul minuman
-                                Text(
+                                const Text(
                                   'Drinks:',
                                   style: TextStyle(
                                       fontSize: 18,
