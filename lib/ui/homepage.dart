@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_restaurant/bloc/restaurant_bloc.dart';
 import 'package:flutter_restaurant/ui/cardresto.dart';
+import 'package:flutter_restaurant/ui/searchresto.dart';
 
 class MyHomePage extends StatelessWidget {
   static const routeName = '/home_page';
@@ -15,6 +16,13 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Resto App"),
         elevation: 0,
+        actions: [
+          IconButton(
+              onPressed: (() {
+                Navigator.pushNamed(context, SearchPage.routeName);
+              }),
+              icon: Icon(Icons.search))
+        ],
       ),
       body: Container(
         child: BlocBuilder<RestaurantBloc, RestaurantState>(
@@ -38,18 +46,6 @@ class MyHomePage extends StatelessWidget {
           },
         ),
       ),
-      // body: FutureBuilder(
-      //   future: DefaultAssetBundle.of(context)
-      //       .loadString(),
-      //   builder: (context, snapshot) {
-      //     final List<RestaurantElement> restaurant = parseResto(snapshot.data);
-      //     return ListView.builder(
-      //         itemCount: restaurant.length,
-      //         itemBuilder: (context, index) {
-      //           return CardResto(context, restaurant[index]);
-      //         });
-      //   },
-    ) // )),
-        );
+    ));
   }
 }
